@@ -3,13 +3,13 @@ const isNavbarOpen = ref<boolean>(false);
 </script>
 
 <template>
-  <nav class="p-4 mx-auto relative shadow-md">
+  <nav class="p-4 mx-auto shadow-md sticky top-0 z-50 bg-white">
     <div class="flex items-center justify-between max-w-7xl mx-auto">
       <img src="/image/logo.png" alt="" />
       <div class="items-center gap-4 hidden md:flex font-semibold">
         <NuxtLink to="/" active-class="text-red-500">Home</NuxtLink>
-        <NuxtLink to="/favorit">Favorit</NuxtLink>
-        <NuxtLink to="/episode">Episode</NuxtLink>
+        <NuxtLink to="/favorit" active-class="text-red-500">Favorit</NuxtLink>
+        <NuxtLink to="/episode" active-class="text-red-500">Episode</NuxtLink>
       </div>
       <button
         @click="isNavbarOpen = !isNavbarOpen"
@@ -27,7 +27,7 @@ const isNavbarOpen = ref<boolean>(false);
       </button>
     </div>
     <div
-      class="absolute w-fit bg-white/70 py-4 px-8 rounded-xl shadow-md -bottom-28 right-8 md:hidden transition-all duration-300 ease-out"
+      class="absolute w-fit bg-white/70 py-4 px-8 rounded-xl shadow-md -bottom-28 right-8 md:hidden transition-all duration-300 ease-out z-30 backdrop-blur-md"
       :class="
         isNavbarOpen
           ? 'block opacity-100 translate-y-0 pointer-events-auto'
